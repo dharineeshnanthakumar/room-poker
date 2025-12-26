@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta natextme="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>poker</title>
+  </head>
+  <body>
+    <h1 align="center">PLAY POKER NOW!</h1>
+    <div align="center">
+      <form>
+        <label for="roomID"
+          >Rooom ID:<input type="text" id="roomID" name="roomNumber"
+        /></label>
+        <input
+          type="submit"
+          id="joinRoom"
+          value="Join Room"
+          formaction="/room"
+          formmethod="get"
+        />
+        <input
+          type="submit"
+          id="createRoom"
+          value="Create Room"
+          formaction="/room"
+          formmethod="post"
+        />
+      </form>
+    </div>
+    <script
+      src="https://cdn.socket.io/4.8.1/socket.io.min.js"
+      integrity="sha384-mkQ3/7FUtcGyoppY6bz/PORYoGqOl7/aSUMn2ymDOJcapfS6PHqxhRTMh1RR0Q6+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+    <script>
+      var socket = io();
+    </script>
+  </body>
+</html>
