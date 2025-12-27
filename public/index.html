@@ -11,22 +11,14 @@
     <div align="center">
       <form>
         <label for="roomID"
-          >Rooom ID:<input type="text" id="roomID" name="roomNumber"
+          >Rooom ID:<input
+            type="text"
+            id="roomID"
+            name="roomNumber"
+            autocomplete="off"
         /></label>
-        <input
-          type="submit"
-          id="joinRoom"
-          value="Join Room"
-          formaction="/room"
-          formmethod="get"
-        />
-        <input
-          type="submit"
-          id="createRoom"
-          value="Create Room"
-          formaction="/room"
-          formmethod="post"
-        />
+        <input type="button" id="joinRoom" value="Join Room" />
+        <input type="button" id="createRoom" value="Create Room" />
       </form>
     </div>
     <script
@@ -35,8 +27,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="script.js"></script>
-    <script>
-      var socket = io();
-    </script>
   </body>
 </html>
