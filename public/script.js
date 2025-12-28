@@ -13,6 +13,9 @@ document.getElementById("joinRoom").addEventListener("click", () => {
   socket.emit("join-room", roomCode);
 });
 
-document.getElementById("createRoom").addEventListener("click", () => {
-  socket.emit("create-room");
+document.getElementById("createRoom").addEventListener("click", async () => {
+  const res = await fetch("/room", { method: "GET" });
+  const data = await res.json();
+
+  socket.emit("join-room", data.roomCode);
 });
