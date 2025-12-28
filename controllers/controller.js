@@ -1,5 +1,5 @@
 let existingRooms = new Set();
-
+const path = require("path");
 const joinRoom = (req, res) => {};
 
 const createRoom = (req, res) => {
@@ -8,4 +8,8 @@ const createRoom = (req, res) => {
   res.json({ roomCode: code });
 };
 
-module.exports = { joinRoom, createRoom, existingRooms };
+const lobby = (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/lobby.html"));
+};
+
+module.exports = { joinRoom, createRoom, existingRooms, lobby };

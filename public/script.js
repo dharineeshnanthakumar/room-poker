@@ -14,8 +14,10 @@ document.getElementById("joinRoom").addEventListener("click", () => {
 });
 
 document.getElementById("createRoom").addEventListener("click", async () => {
-  const res = await fetch("/room", { method: "GET" });
-  const data = await res.json();
-
-  socket.emit("join-room", data.roomCode);
+  fetch("/room", { method: "GET" })
+    .then((res) => res.json())
+    .then((data) => {
+      socket.emit("join-room", data.roomCode);
+      window.location.href = `/room/${data.roomCode}`;
+    });
 });
